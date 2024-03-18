@@ -1,0 +1,42 @@
+﻿@model GiveawaysViewModel
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - SimpleAds.Web</title>
+</head>
+<body>
+    <header> </header>
+    <div b-78gchgm0rj class="container">
+        <main b-78gchgm0rj role="main" class="pb-3">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="bg-light rounded-3 p-5 mt-3">
+                        @foreach (var g in Model.GiveawayAds)
+                        {
+                            @if (g.UserId == Model.UserId)
+                            {
+                                <div class="bg-light rounded-3 p-5 mt-3">
+                                    <h5>Listed by @g.Name</h5>
+                                    <h5>Listed on @g.Date.ToLongDateString()</h5>
+                                    <h5>Phone Number: @g.PhoneNumber</h5>
+                                    <h3>Details:</h3>
+                                    <p style="font-size:20px;  word-wrap: break-word;">@g.Details</p>
+
+                                    <form method="post" action="/home/delete">
+                                        <input type="hidden" value="@g.Id" name="id" />
+                                        <button class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - SimpleAds.Web</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col-md-6 offset-md-3 bg-light rounded-3 p-5">
+                <form method="post" action="/home/added">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" placeholder="Name" class="form-control" name="name" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" placeholder="Phone Number" class="form-control" name="phoneNumber" />
+                        </div>
+                    </div>
+                    <br />
+                    <textarea name="details" class="form-control" rows="10" placeholder="Description"></textarea>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
