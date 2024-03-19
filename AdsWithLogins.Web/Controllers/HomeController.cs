@@ -22,6 +22,8 @@ namespace AdsWithLogins.Web.Controllers
             return View(vm);
         }
 
+        [Authorize]
+        [HttpPost]
         public IActionResult Added(string name, string details, string phoneNumber)
         {
             var mgr = new GiveawayAdsManager(connectionString);
@@ -36,6 +38,8 @@ namespace AdsWithLogins.Web.Controllers
             return View();
         }
 
+        [Authorize]
+        [HttpPost]
         public IActionResult Delete(int id)
         {
             var mgr = new GiveawayAdsManager(connectionString);
